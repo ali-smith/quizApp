@@ -1,0 +1,115 @@
+html { 
+  /*background image*/
+  background: url("../images/hs-2006-01-q-xlarge_web_1366x768.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+  /*universal*/
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+}
+
+.fadeBackground {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-color: white;
+	opacity: .50;
+	/*shadow horiz vert blur spread color*/
+	-moz-box-shadow:    30px 0px 40px 15px #0c0e22;
+  	-webkit-box-shadow: 30px 0px 40px 15px #0c0e22;
+  	box-shadow:         30px 0px 40px 15px #0c0e22;
+
+}
+
+.centerWrapper {
+	height: 400px;
+	width: 600px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -300px;
+	border-radius: 5px;
+	/*shadow horiz vert blur spread color*/
+	/*-moz-box-shadow:    0px 0px 100px 50px #0c0e22;
+  	-webkit-box-shadow: 0px 0px 100px 50px #0c0e22;
+  	box-shadow:         0px 0px 100px 50px #0c0e22;*/
+
+}
+
+.welcome {
+	text-align: center;
+}
+
+.welcome h1{
+	font-size: 64px;
+}
+
+.startButton {
+	height: 100px;
+	width: 200px;
+	background-color: #c7dfe3;
+	border-radius: 10px;
+	/*shadow horiz vert blur spread color*/
+	-moz-box-shadow:    0px 0px 15px 10px #cce5e9;
+  	-webkit-box-shadow: 0px 0px 15px 10px #cce5e9;
+  	box-shadow:         0px 0px 15px 10px #cce5e9;
+	display: inline-block;
+	margin-top: 50px; 
+	cursor: pointer;
+}
+
+.startButton p {
+	margin-top: 40px;
+}
+
+.quizTemplate {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 32px;
+	line-height: 32px;
+	display: none;
+}
+
+h2.question {
+	font-size: 35px;
+	margin-bottom: 24px;
+}
+
+.answers {
+	list-style: none;
+	width: 550px;
+	margin-left: 25px;
+}
+
+.fa-circle-o {
+	cursor: pointer;
+}
+
+.liDiv {
+	margin-left: 30px;
+	margin-top: -33px;
+	cursor: pointer;
+}
+
+.quizStatus {
+	height: 100px;
+	width: 600px;
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+	/*shadow horiz vert blur spread color*/
+	/*-moz-box-shadow:    0px 0px 15px 10px #cce5e9;
+  	-webkit-box-shadow: 0px 0px 15px 10px #cce5e9;
+  	box-shadow:         0px 0px 15px 10px #cce5e9;*/
+	display: inline-block;
+}
+
+
