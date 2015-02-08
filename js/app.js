@@ -6,7 +6,7 @@ $(".startButton").on("click", function(){
 	$(".welcome").hide();
 	$(".quizTemplate").fadeIn(2500);
 	$(".fadeBackground").fadeIn();
-	renderQuizSection();
+	QuizSection.renderQuizSection();
 	
 });
 
@@ -15,20 +15,6 @@ $(".startButton").on("click", function(){
 		this.answers = answers;
 		this.correctAnswer = correctAnswer;
 		this.feedback = feedback;
-
-	this.renderQuizSection = function(){
-		var currentQuizSection = quizSections.shift();
-	 	$(".question").append(question);
-	 	
-		function addAnswerListItem(answers){
-			for (var i = 0; i === 3; i++){
-				$(".answers").append("<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>");
-			}
-		}
-		addAnswerListItem();
-
-}
-
 
 	}
 
@@ -55,7 +41,20 @@ $(".startButton").on("click", function(){
 
 	var quizSections = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8, qs9, qs10];
 
+	this.renderQuizSection = function(){
+		var currentQuizSection = quizSections.shift();
+	 	$(".question").append(this.question);
 
+//below is where i'm trying to get the answers to show up as list items -->
+		
+		// function addAnswerListItem(answers){
+		// 	for (var i = 0; i === 3; i++){
+		// 		$(".answers").append("<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>");
+		// 	}
+		// }
+		// addAnswerListItem();
+
+}
 
 
 
