@@ -41,18 +41,14 @@ $(".startButton").on("click", function(){
 	var quizSections = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8, qs9, qs10];
 
 function renderQuizSection(){
-	var currentQuizSection = QuizSections.shift();
+	var currentQuizSection = quizSections.shift();
 	$(".question").append(currentQuizSection.question);
 	$(".answers").append(currentQuizSection.answers);
-	// addListItem = (function(answer){
-	// 	a = "<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>"
-		
 	
 
+	//answer li = "<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>"
+	
 
-	
-	
-} 
 
 
 
