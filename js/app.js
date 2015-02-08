@@ -49,7 +49,7 @@ function renderQuizSection(){
 	//answer li = "<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>"
 	
 
-
+}
 
 
 
