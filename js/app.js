@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+	var answersHTML = "";
 
 	//start quiz
 $(".startButton").on("click", function(){
@@ -15,6 +15,21 @@ $(".startButton").on("click", function(){
 		this.answers = answers;
 		this.correctAnswer = correctAnswer;
 		this.feedback = feedback;
+
+	this.renderQuizSection = function(){
+		var currentQuizSection = quizSections.shift();
+	 	$(".question").append(question);
+	 	
+		function addAnswerListItem(answers){
+			for (var i = 0; i === 3; i++){
+				$(".answers").append("<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>");
+			}
+		}
+		addAnswerListItem();
+
+}
+
+
 	}
 
 	qs1 = new QuizSection ("'Nebula' is the Latin word for: ",["vague","dust","wormhole","cloud"],"cloud", "")
@@ -40,16 +55,7 @@ $(".startButton").on("click", function(){
 
 	var quizSections = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8, qs9, qs10];
 
-function renderQuizSection(){
-	var currentQuizSection = quizSections.shift();
-	$(".question").append(currentQuizSection.question);
-	$(".answers").append(currentQuizSection.answers);
-	
 
-	//answer li = "<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>"
-	
-
-}
 
 
 
