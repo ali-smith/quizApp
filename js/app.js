@@ -6,7 +6,7 @@ $(".startButton").on("click", function(){
 	$(".welcome").hide();
 	$(".quizTemplate").fadeIn(2500);
 	$(".fadeBackground").fadeIn();
-	renderQuestion();
+	renderQuizSection();
 	
 });
 
@@ -38,15 +38,20 @@ $(".startButton").on("click", function(){
 	qs10 = new QuizSection	("The first astronomer to mention a group of 'nebulous' stars in 150 A.D. was:",["Ptolemy","Galileo","Nostradamus","Spock"],"Ptolemy","")
 	
 
-	var quizsections = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8, qs9, qs10];
+	var quizSections = [qs1, qs2, qs3, qs4, qs5, qs6, qs7, qs8, qs9, qs10];
 
-function renderQuestion(){
-	var question = QuizSection[0]
-	var answers = QuizSection[1]
-	$(".question").append(question);
-	$(".answers").append(answers);
-	quizsections.shift();
+function renderQuizSection(){
+	var currentQuizSection = QuizSections.shift();
+	$(".question").append(currentQuizSection.question);
+	$(".answers").append(currentQuizSection.answers);
+	// addListItem = (function(answer){
+	// 	a = "<i class="fa fa-circle-o"></i><div class="liDiv"><li>" + answer + "</li></div><br>"
+		
+	
 
+
+	
+	
 } 
 
 
