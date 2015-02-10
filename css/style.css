@@ -102,6 +102,12 @@ h2.question {
 	cursor: pointer;
 }
 
+.submit {
+	width: 100px;
+	height: 50px;
+	border: solid 5px black;
+}
+
 .quizStatus {
 	height: 100px;
 	width: 600px;
