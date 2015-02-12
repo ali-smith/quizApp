@@ -1,35 +1,39 @@
 $(document).ready(function(){
+  
+  var userAnswers = []
+
 	//welcome screen
-  $(".startButton").on("click", function(){
-	  $(".welcome").hide();
-	  $(".quizTemplate").fadeIn(2500);
-	  $(".fadeBackground").fadeIn();
+  $('.startButton').on('click', function(){
+	  $('.welcome').hide();
+	  $('.quizTemplate').fadeIn(2500);
+	  $('.fadeBackground, .quizBackground').fadeIn();
   });
   //set current question
   var currentQuestion = 1;
   //html question
   var addQuestion = function(){
     $('.question').html(list[currentQuestion].question);
+    $('.counterBar').html('<h1>countdown: ' + list[currentQuestion].questionNumber + '</h1>');
   };
   addQuestion();
   //append answers
    var addAnswers = function(){
       for (i=0; i<=3; i++){
-  $('.answersUL').append('<li class="answersLI"><i class="fa fa-circle-o"></i>' + list[currentQuestion].answers[i] + '</li><br>'); 
+      $('.answersUL').append('<li class="answersLI"><i class="fa fa-circle-o"></i>' + list[currentQuestion].answers[i] + '</li><br>'); 
        }
     };  
   addAnswers();
-
+  
   //select answer
-  $('i').on('click', function(){
-  	if ($(this).hasClass('fa fa-circle-o')){
-  		$(this).removeClass().addClass('fa fa-circle');
+  	$('.answersUL').on('click', 'i', function(){
+  	if ($('i').hasClass('fa fa-circle-o')){
+  		$('i').removeClass().addClass('fa fa-circle');
   		$('i').not(this).removeClass().addClass('fa fa-circle-o');
-  	}
-  });	
-
+  		}
+  	});	
+  
   //change question on click
-  $('.submit').on('click', function(){
+  $('.next').on('click', function(){
     // increase question by 1
     var nextQuestion = currentQuestion++;
     //change question text
@@ -38,10 +42,12 @@ $(document).ready(function(){
     $('.answersUL').empty();
     //add new answers
     addAnswers();
- 
+
+    //if the list item contains the i class fa fa-circle
+
+    //take answers[i] from that list item and put in new array userAnswers[]
+  
   });
-
-
 
 
 });//document ready
