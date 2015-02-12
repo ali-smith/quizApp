@@ -57,6 +57,7 @@ html {
 	height: 150px;
 	width: 150px;
 	background-color:black;
+	border-style: none;
 	border-radius: 50%;
 	/*shadow horiz vert blur spread color*/
 	-moz-box-shadow:    0px 0px 15px 10px black;
@@ -68,7 +69,6 @@ html {
 }
 
 .startButton p {
-	margin-top: 51px;
 	color: white;
 	font-size: 24px;
 }
@@ -81,31 +81,32 @@ html {
 	display: none;
 }
 
-h2.question {
-	font-size: 35px;
+h1.question {
+	font-size: 32px;
 	margin-bottom: 24px;
+	line-height: 32px;
 }
 
-.answers {
+.answersUL {
 	list-style: none;
-	width: 550px;
-	margin-left: 25px;
 }
 
-.fa-circle-o {
+.answersLI {
+	cursor: pointer;
+	text-indent: -24px;
+    padding-left: 24px;
+}
+
+.fa-circle-o, .fa-circle {
+	margin-right: 24px;
 	cursor: pointer;
 }
 
-.liDiv {
-	margin-left: 30px;
-	margin-top: -33px;
-	cursor: pointer;
-}
-
-.submit {
+button.submit {
 	width: 100px;
 	height: 50px;
 	border: solid 5px black;
+	cursor: pointer;
 }
 
 .quizStatus {

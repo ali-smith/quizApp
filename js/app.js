@@ -15,16 +15,12 @@ $(document).ready(function(){
   //append answers
    var addAnswers = function(){
       for (i=0; i<=3; i++){
-  $('.answers').append('<i class="fa fa-circle-o"></i><div class="liDiv"><li>' + list[currentQuestion].answer[i] + '</li></div><br>'); 
+  $('.answersUL').append('<li class="answersLI"><i class="fa fa-circle-o"></i>' + list[currentQuestion].answers[i] + '</li><br>'); 
        }
     };  
   addAnswers();
-  //append right answer
-  // var addCorrectAnswer = function (){
-  //   $('.answers').append('<i class="fa fa-circle-o"></i><div class="liDiv"><li>' + list[currentQuestion].answer + '</li></div><br>');
-  // };
-  // addCorrectAnswer();
-  
+
+	 
   //change question on click
   $('.submit').on('click', function(){
     // increase question by 1
@@ -32,13 +28,23 @@ $(document).ready(function(){
     //change question text
    addQuestion();
     //remove previous answers
-    $('.answers').empty();
-    //add new, wrong answers
+    $('.answersUL').empty();
+    //add new answers
     addAnswers();
-    //add new right answer
-  //   addCorrectAnswer();
+ 
   });
 
+ //click answer and check or uncheck
+
+  $('i').on('click', function(){
+  	if ($(this).hasClass('fa fa-circle-o')){
+  		$(this).removeClass().addClass('fa fa-circle');
+  	}
+  	else if ($(this).hasClass('fa fa-circle')){
+  		$(this).removeClass().addClass('fa fa-circle-o');
+    	}
+
+  });
 
 
 });//document ready
