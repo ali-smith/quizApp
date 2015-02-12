@@ -20,7 +20,16 @@ $(document).ready(function(){
     };  
   addAnswers();
 
-	 
+  //select answer
+  $('i').on('click', function(){
+  	if ($(this).hasClass('fa fa-circle-o')){
+  		$(this).removeClass().addClass('fa fa-circle');
+  	}
+  	else if ($(this).hasClass('fa fa-circle')){
+  		$(this).removeClass().addClass('fa fa-circle-o');
+    	}
+  });	
+
   //change question on click
   $('.submit').on('click', function(){
     // increase question by 1
@@ -34,17 +43,7 @@ $(document).ready(function(){
  
   });
 
- //click answer and check or uncheck
 
-  $('i').on('click', function(){
-  	if ($(this).hasClass('fa fa-circle-o')){
-  		$(this).removeClass().addClass('fa fa-circle');
-  	}
-  	else if ($(this).hasClass('fa fa-circle')){
-  		$(this).removeClass().addClass('fa fa-circle-o');
-    	}
-
-  });
 
 
 });//document ready
