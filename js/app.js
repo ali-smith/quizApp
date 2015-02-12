@@ -24,10 +24,8 @@ $(document).ready(function(){
   $('i').on('click', function(){
   	if ($(this).hasClass('fa fa-circle-o')){
   		$(this).removeClass().addClass('fa fa-circle');
-  	} else {
-  		$(this).removeClass('fa fa-circle').addClass('fa fa-circle-o');
+  		$('i').not(this).removeClass().addClass('fa fa-circle-o');
   	}
-    	
   });	
 
   //change question on click
