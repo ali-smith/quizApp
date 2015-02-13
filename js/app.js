@@ -1,6 +1,7 @@
 $(document).ready(function(){
   
   var userAnswers = [];
+  var nextQuestion;
 
 	//welcome screen
   $('.startButton').on('click', function(){
@@ -8,14 +9,16 @@ $(document).ready(function(){
 	  $('.quizTemplate').fadeIn(2500);
 	  $('.fadeBackground, .quizBackground').fadeIn();
   });
+
   //set current question
   var currentQuestion = 1;
   //html question
   var addQuestion = function(){
     $('.question').html(list[currentQuestion].question);
-    $('.counterBar').html('<h1>countdown: ' + list[currentQuestion].questionNumber + '</h1>');
+    $('.counterBar').html('<h1>countdown: ' + list[currentQuestion].questionNumber + '</h1>');  
   };
   addQuestion();
+
   //append answers
   var addAnswers = function(){
       for (i=0; i<=3; i++){
@@ -32,18 +35,30 @@ $(document).ready(function(){
   		}
   	});	
   
-  // find text in answer then put in userAnswers
+  // find text in answer then push to userAnswers array
 	var pushUserSelection = function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
 	}
 
+  var quizOver = function(){
+   //if the quiz is over do this
+    if (userAnswers.length == 9){
+      $('.quizBackground').hide();
+      $('.quizResults').show();
+      
+      }
+  }
 
   //change question on click
   	$('.next').on('click', function(){
-  	pushUserSelection();
-    // increase question by 1
+  	quizOver();
+    //if answer is checked do this
+    if ($('i').hasClass('fa-circle')){
+    //add to array
+    pushUserSelection(); 
+    //increase question by 1
     var nextQuestion = currentQuestion++;
     //change question text
     addQuestion();
@@ -52,17 +67,13 @@ $(document).ready(function(){
     //add new answers
     addAnswers();
 
-    //take answers[i] from that list item and put in new array userAnswers[]
-     
-  
+    //if no answer checked, do this
+    }else{
+      alert('must pick one!');
+      }
   });
 
 
 });//document ready
-
-
-
-
-
 
 

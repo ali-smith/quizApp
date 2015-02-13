@@ -49,8 +49,8 @@ var Question7 = {
 };
 var Question8 = { 
 		questionNumber: 3,
-		question: 'Spectroscopy is the study of:',
-		answers: ['gravity\'s impact on matter at varying densities', 'the spectrum through which a nebula\'s light passes','the specters that live inside emission nebulae','the inner world of dust specs found in a nebula'],
+		question: 'Spectroscopy describes:',
+		answers: ['gravity\'s impact on matter at varying densities', 'the spectrum through which a nebula\'s light passes','an uncomfortable procedure that specters over the age of 50 must endure','the inner world of dust specs found in a nebula'],
 		correctAnswer: 'the spectrum through which a nebula\'s light passes',
         explain: '',
 };

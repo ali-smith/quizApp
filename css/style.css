@@ -150,4 +150,24 @@ button.next {
 	padding-top: 4px;
 }
 
+.quizResults {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+	padding: 24px;
+	width: 600px;
+	height: 400px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -300px;
+	background: rgba(38, 54, 87, 0.5);
+	border-radius: 10px;
+	/*shadow horiz vert blur spread color*/
+	-moz-box-shadow:    0px 0px 15px 0px #263657;
+  	-webkit-box-shadow: 0px 0px 15px 0px #263657;
+  	box-shadow:         0px 0px 15px 0px #263657;
+	display: none;
+}
 
