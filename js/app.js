@@ -32,10 +32,17 @@ $(document).ready(function(){
   		}
   	});	
   
+   // find text in answer then put in userAnswers
+	var userAnswer = function(){
+		$('.answersUL > answersLI > .fa-circle + .userchoice').text();
+		userAnswers.push('userAnswer');
+		console.log(userAnswer);
+	}
+
+
   //change question on click
   $('.next').on('click', function(){
-  	//
-	var userAnswer = $('.answersUL > answersLI > .fa-circle + userchoice').text();
+  	userAnswer();
     // increase question by 1
     var nextQuestion = currentQuestion++;
     //change question text
