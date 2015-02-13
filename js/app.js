@@ -1,6 +1,6 @@
 $(document).ready(function(){
   
-  var userAnswers = []
+  var userAnswers = [];
 
 	//welcome screen
   $('.startButton').on('click', function(){
@@ -17,9 +17,9 @@ $(document).ready(function(){
   };
   addQuestion();
   //append answers
-   var addAnswers = function(){
+  var addAnswers = function(){
       for (i=0; i<=3; i++){
-      $('.answersUL').append('<li class="answersLI"><i class="fa fa-circle-o"></i>' + list[currentQuestion].answers[i] + '</li><br>'); 
+      $('.answersUL').append('<li class="answersLI"><i class="fa fa-circle-o"></i><span class="userSelection">' + list[currentQuestion].answers[i] + '</span></li><br>'); 
        }
     };  
   addAnswers();
@@ -32,21 +32,21 @@ $(document).ready(function(){
   		}
   	});	
   
-   // find text in answer then put in userAnswers
-	var userAnswer = function(){
-		$('.answersUL > answersLI > .fa-circle + .userchoice').text();
-		userAnswers.push('userAnswer');
-		console.log(userAnswer);
+  // find text in answer then put in userAnswers
+	var userAnswer = $('.answersUL > answersLI > .fa-circle + .userSelection').text();
+	var pushUserSelection = function(){
+		userAnswers.push(userAnswer);
+		console.log(userAnswers);
 	}
 
 
   //change question on click
-  $('.next').on('click', function(){
-  	userAnswer();
+  	$('.next').on('click', function(){
+  	pushUserSelection();
     // increase question by 1
     var nextQuestion = currentQuestion++;
     //change question text
-   addQuestion();
+    addQuestion();
     //remove previous answers
     $('.answersUL').empty();
     //add new answers
