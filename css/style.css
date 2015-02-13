@@ -181,3 +181,9 @@ button.next {
 	font-weight: 600;
 }
 
+.hide {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+}
+
