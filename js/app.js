@@ -34,6 +34,7 @@ $(document).ready(function(){
   
   //change question on click
   $('.next').on('click', function(){
+  	
     // increase question by 1
     var nextQuestion = currentQuestion++;
     //change question text
@@ -43,9 +44,8 @@ $(document).ready(function(){
     //add new answers
     addAnswers();
 
-    //if the list item contains the i class fa fa-circle
-
     //take answers[i] from that list item and put in new array userAnswers[]
+     var userAnswer = $('.answersUL > li > .fa-circle + userchoice’).text();
   
   });
 
