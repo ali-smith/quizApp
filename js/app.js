@@ -51,6 +51,12 @@ $(document).ready(function(){
       }
   }
 
+    // this is supposed to be the accordion function
+      $(function() {
+      $( "#accordion" ).accordion();
+      });
+      
+
   //change question on click
   	$('.next').on('click', function(){
   	quizOver();
