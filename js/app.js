@@ -33,8 +33,9 @@ $(document).ready(function(){
   	});	
   
   // find text in answer then put in userAnswers
-	var userAnswer = $('.answersUL > answersLI > .fa-circle + .userSelection').text();
+	
 	var pushUserSelection = function(){
+		var userAnswer = $('.answersUL > .answersLI > .fa fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
 	}
