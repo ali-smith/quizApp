@@ -48,7 +48,7 @@ $(document).ready(function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
-    // compareAnswers();
+    compareAnswers();
 	}
 
 
@@ -87,17 +87,17 @@ $(document).ready(function(){
   }      
  //compare userAnswers array with correct answers array
  
-  //   var compareAnswers = function(){
-  //     for (var i = 0, i == 10, i++){
-  //     if (userAnswers[i] === list[currentQuestion].correctAnswer){
-  //       console.log('yup');
-  //       $('.accordionDiv').append('<article class="accordionArticle">
-  //   <h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[currentQuestion].question + '</h2>
-  //   <p class="accordionAnswer">' + list[currentQuestion].explanation + '</p>
-  //   </article>');
-  //     }
+    var compareAnswers = function(){
+      for (var i = 0, i == 10, i++){
+      if (userAnswers[i] === list[currentQuestion].correctAnswer){
+        console.log('yup');
+        $('.accordionDiv').append('<article class="accordionArticle">
+    <h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[currentQuestion].question + '</h2>
+    <p class="accordionAnswer">' + list[currentQuestion].explanation + '</p>
+    </article>');
+      }
     
-  // };
+  }
   
    
     //SOLUTION:
