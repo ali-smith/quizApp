@@ -48,7 +48,7 @@ $(document).ready(function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
-    compareAnswers();
+    // compareAnswers();
 	}
 
 
@@ -86,9 +86,7 @@ $(document).ready(function(){
       }
   }      
  //compare userAnswers array with correct answers array
-  
-    //SOLUTION:
-    //http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
+ 
   //   var compareAnswers = function(){
   //     for (var i = 0, i == 10, i++){
   //     if (userAnswers[i] === list[currentQuestion].correctAnswer){
@@ -101,7 +99,9 @@ $(document).ready(function(){
     
   // };
   
-  
+   
+    //SOLUTION:
+    //http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
 
 
 });//document ready
