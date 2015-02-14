@@ -91,11 +91,11 @@ $(document).ready(function(){
  //compare userAnswers array with correct answers array
   var compareAnswers = function(){
       for (i=0; i<=10; i++){
-      if (userAnswers[i] === list[i].correctAnswer){
+      if (userAnswers['i'] === list['i'].correctAnswer){
         console.log('yup');
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list['i'].question + '</h2><p class="accordionAnswer">' + list['i'].explanation + '</p></article>');
       }else{
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list['i'].question + '</h2><p class="accordionAnswer">' + list['i'].explanation + '</p></article>');
 
       }
     }
