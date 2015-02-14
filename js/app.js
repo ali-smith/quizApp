@@ -1,8 +1,7 @@
 $(document).ready(function(){
   
   var userAnswers = [];
-  var nextQuestion;
- 
+  var nextQuestion; 
  
  // button to go directly to results page
     $('.hide').on('click', function(){
@@ -48,7 +47,7 @@ $(document).ready(function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
-    // compareAnswers();
+    compareAnswers();
 	}
 
 
@@ -84,32 +83,32 @@ $(document).ready(function(){
       $('.quizResultsBackground').fadeIn(2500);
       
       }
-  }      
+  }    
+
+
+
  //compare userAnswers array with correct answers array
- 
-  // var compareAnswers = function(){
-  //     for (i=0; i=10; i++){
-  //     if (userAnswers[i] === list[currentQuestion].correctAnswer){
-  //       // console.log('yup');
-  //       $('.accordionDiv').append('<article class="accordionArticle">
-  //   <h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[currentQuestion].question + '</h2>
-  //   <p class="accordionAnswer">' + list[currentQuestion].explanation + '</p>
-  //   </article>');
-  //     }else{
-  //       $('.accordionDiv').append('<article class="accordionArticle">
-  //   <h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[currentQuestion].question + '</h2>
-  //   <p class="accordionAnswer">' + list[currentQuestion].explanation + '</p>
-  //   </article>');
-       
-  //     }
-  //   }
-  // }
-  
+  var compareAnswers = function(){
+      for (i=0; i<=10; i++){
+      if (userAnswers[i] === list[i].correctAnswer){
+        console.log('yup');
+        $('.accordionDiv').append('<article class="accordionArticle">
+    <h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2>
+    <p class="accordionAnswer">' + list[i].explanation + '</p>
+    </article>');
+      }else{
+        $('.accordionDiv').append('<article class="accordionArticle">
+    <h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2>
+    <p class="accordionAnswer">' + list[i].explanation + '</p>
+    </article>');
+
+      }
+    }
+  }
+  });//document ready
    
-    //SOLUTION:
-    //http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
 
 
-});//document ready
+
 
 
