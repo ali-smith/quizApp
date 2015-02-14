@@ -1,15 +1,8 @@
 $(document).ready(function(){
   
   var userAnswers = [];
-  var nextQuestion; 
-   
+  var nextQuestion;
 
- // button to go directly to results page
-    $('.hide').on('click', function(){
-      $('.welcomeWrapper').hide();
-      $('.quizBackground').hide();
-      $('.quizResultsBackground').show();
-    });
 
 	//welcome screen
   $('.startButton').on('click', function(){
@@ -23,7 +16,7 @@ $(document).ready(function(){
   //html question
   var addQuestion = function(){
     $('.question').html(list[currentQuestion].question).fadeIn(1200);
-    $('.counterBar').html('<h1>countdown: ' + list[currentQuestion].questionNumber + '</h1>');  
+    $('.counterCircle').html('<h2>' + list[currentQuestion].questionNumber + '</h2>');  
   };
   addQuestion();
 
@@ -41,7 +34,20 @@ $(document).ready(function(){
   		$('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').removeClass().addClass('fa fa-circle');
   		$('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').not(this).removeClass().addClass('fa fa-circle-o');
       }
-  	});	
+  	});
+
+
+  //alert window: must choose an answer
+  var pickOneAlert = function(){
+    $('.pickOneBackground').fadeIn(400);
+    $('.quizBackground').fadeTo("slow", 0.1);
+  } 
+  
+  $('.pickOneBackground').on('click',function(){
+    $(this).fadeOut("slow");
+    $('.quizBackground').fadeTo("slow", 1.0);
+  })   
+
 
   // find text in answer then push to userAnswers array
 	var pushUserSelection = function(){
@@ -50,10 +56,6 @@ $(document).ready(function(){
 		console.log(userAnswers);
     compareAnswers();
 	}
-
-
-
-    
 
   //change question on click
   	$('.next').on('click', function(){
@@ -73,36 +75,55 @@ $(document).ready(function(){
 
     //if no answer checked, do this
     }else{
-      alert('must pick one!');
+        pickOneAlert();
       }
   });
 
   //if the quiz is over do this
   var quizOver = function(){
-    if (userAnswers.length == 10){
+    if (userAnswers.length == 9){
       $('.quizBackground').hide();
       $('.quizResultsBackground').fadeIn(2500);
       
       }
   }    
 
+  //accordion -- hides/shows answer explanation
+$('.accordionArticle').on('click', function(){
+  // $(this).find('.accordionHeader').slideToggle('slow');
+  $(this).find('.accordionAnswer').slideToggle('slow');
 
+});
 
- //compare userAnswers array with correct answers array
+ // compare userAnswers array with correct answers array
   var compareAnswers = function(){
       for (i=0; i<=10; i++){
-      if (userAnswers['i'] === list['i'].correctAnswer){
+      if (userAnswers[i] === list[i].correctAnswer){
         console.log('yup');
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list['i'].question + '</h2><p class="accordionAnswer">' + list['i'].explanation + '</p></article>');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
       }else{
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list['i'].question + '</h2><p class="accordionAnswer">' + list['i'].explanation + '</p></article>');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
 
       }
     }
   }
   });//document ready
    
+ // button to go directly to results window
+    $('.results').on('click', function(){
+      $('.welcomeWrapper').hide();
+      $('.quizBackground').hide();
+      $('.quizResultsBackground').show();
+    });
 
+ // button to go directly to pickOne window
+    $('.pickOne').on('click', function(){
+      $('.welcomeWrapper').hide();
+      $('.quizBackground').fadeTo("slow", 0.1);
+      $('.fadeBackground').show();
+      $('.quizResultsBackground').hide();
+      $('.pickOneBackground').show();
+    });
 
 
 
