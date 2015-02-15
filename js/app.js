@@ -2,6 +2,7 @@ $(document).ready(function(){
   
   var userAnswers = [];
   var nextQuestion;
+  
 
 
 	//welcome screen
@@ -54,7 +55,7 @@ $(document).ready(function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
-    compareAnswers();
+    
 	}
 
   //change question on click
@@ -79,25 +80,11 @@ $(document).ready(function(){
       }
   });
 
-  //if the quiz is over do this
-  var quizOver = function(){
-    if (userAnswers.length == 9){
-      $('.quizBackground').hide();
-      $('.quizResultsBackground').fadeIn(2500);
-      
-      }
-  }    
-
-  //accordion -- hides/shows answer explanation
-$('.accordionArticle').on('click', function(){
-  // $(this).find('.accordionHeader').slideToggle('slow');
-  $(this).find('.accordionAnswer').slideToggle('slow');
-
-});
-
+   
  // compare userAnswers array with correct answers array
   var compareAnswers = function(){
       for (i=0; i<=10; i++){
+        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
       if (userAnswers[i] === list[i].correctAnswer){
         console.log('yup');
         $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
@@ -107,6 +94,26 @@ $('.accordionArticle').on('click', function(){
       }
     }
   }
+  compareAnswers();
+
+  //if the quiz is over do this
+  var quizOver = function(){
+    if (userAnswers.length == 9){
+      $('.quizBackground').hide();
+      $('.quizResultsBackground').fadeIn(2500);
+      
+      }
+  } 
+
+  //accordion -- hides/shows answer explanation
+$('.accordionArticle').on('click', function(){
+  // $(this).find('.accordionHeader').slideToggle('slow');
+  $(this).find('.accordionAnswer').slideToggle('slow');
+
+});
+
+
+
   });//document ready
    
  // button to go directly to results window
