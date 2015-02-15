@@ -71,9 +71,9 @@ $(document).ready(function(){
     var accordionQuestionH2 = list[i].question;
     var accordionExplanation = list[i].explanation;
       for (i=0; i<=9; i++){
-        // console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
+        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
         if (userAnswers[i] == list[i].correctAnswer){
-          console.log('yup');
+          console.log('what?');
         $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
       }else{
         $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
@@ -85,13 +85,13 @@ $(document).ready(function(){
 
     //change question on click
     $('.next').on('click', function(){
-     if (userAnswers.length == 9) {//then this
+     if (userAnswers.length == 9) {
        pushUserSelection();
        quizOver();
        compareAnswers();
     //if answer is checked do this
     } else {
-      if ($('i').hasClass('fa-circle')){//this test should be first
+      if ($('i').hasClass('fa-circle')){
     //add to array
     pushUserSelection(); 
     //increase question by 1
