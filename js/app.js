@@ -13,7 +13,7 @@ $(document).ready(function(){
   });
 
   //set current question
-  var currentQuestion = 0;
+  var currentQuestion = 0; 
   //html question
   var addQuestion = function(){
     $('.question').html(list[currentQuestion].question).fadeIn(1200);
@@ -42,12 +42,12 @@ $(document).ready(function(){
   var pickOneAlert = function(){
     $('.pickOneBackground').fadeIn(400);
     $('.quizBackground').fadeTo("slow", 0.1);
-  } 
+  }; 
   
   $('.pickOneBackground').on('click',function(){
     $(this).fadeOut("slow");
     $('.quizBackground').fadeTo("slow", 1.0);
-  })   
+  });   
 
 
   // find text in answer then push to userAnswers array
@@ -55,14 +55,26 @@ $(document).ready(function(){
 		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
 		userAnswers.push(userAnswer);
 		console.log(userAnswers);
-    
 	}
+
+	};
+	  //if the quiz is over do this
+  var quizOver = function(){
+   
+      $('.quizBackground').hide();
+      $('.quizResultsBackground').fadeIn(2500);
+      compareAnswers();
+      
+  }; 
+
 
   //change question on click
   	$('.next').on('click', function(){
-  	quizOver();
+  	 if (userAnswers.length == 9) {//then this
+  	   quizOver();
     //if answer is checked do this
-    if ($('i').hasClass('fa-circle')){
+    } else {
+      if ($('i').hasClass('fa-circle')){//this test should be first
     //add to array
     pushUserSelection(); 
     //increase question by 1
@@ -78,6 +90,7 @@ $(document).ready(function(){
     }else{
         pickOneAlert();
       }
+
   });
 
    
@@ -113,8 +126,36 @@ $('.accordionArticle').on('click', function(){
 });
 
 
+  };
+});
+
+// compare userAnswers array with correct answers array
+  var compareAnswers = function(){
+      for (i=0; i<=9; i++){
+        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
+      if (userAnswers[i] === list[i].correctAnswer){
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
+      }else{
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
+
+      }
+    }
+  }
+  
+
+   
+
+  //accordion -- hides/shows answer explanation
+$('.accordionArticle').on('click', function(){
+  // $(this).find('.accordionHeader').slideToggle('slow');
+  $(this).find('.accordionAnswer').slideToggle('slow');
+
+});
+
 
   });//document ready
+   
+   
    
  // button to go directly to results window
     $('.results').on('click', function(){
