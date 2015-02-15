@@ -1,15 +1,16 @@
+//it should test to make sure there is an answered selected, then test for the userAnswers.length, and respond accordingly 
+
 $(document).ready(function(){
   
   var userAnswers = [];
   var nextQuestion;
-  
 
 
-	//welcome screen
+  //welcome screen
   $('.startButton').on('click', function(){
-	  $('.welcome').fadeOut(1500);
-	  $('.quizTemplate').fadeIn(2000);
-	  $('.fadeBackground, .quizBackground').fadeIn(2000);
+    $('.welcome').fadeOut(1500);
+    $('.quizTemplate').fadeIn(2000);
+    $('.fadeBackground, .quizBackground').fadeIn(2000);
   });
 
   //set current question
@@ -30,12 +31,12 @@ $(document).ready(function(){
   addAnswers();
   
   //select answer
-  	$('.answersUL').on('click', 'i', function(){
-  	if ($('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').hasClass('fa fa-circle-o')){
-  		$('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').removeClass().addClass('fa fa-circle');
-  		$('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').not(this).removeClass().addClass('fa fa-circle-o');
+    $('.answersUL').on('click', 'i', function(){
+    if ($('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').hasClass('fa fa-circle-o')){
+      $('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').removeClass().addClass('fa fa-circle');
+      $('i:not(.fa-star, .fa-star-o, .fa-thumbs-down)').not(this).removeClass().addClass('fa fa-circle-o');
       }
-  	});
+    });
 
 
   //alert window: must choose an answer
@@ -51,27 +52,43 @@ $(document).ready(function(){
 
 
   // find text in answer then push to userAnswers array
-	var pushUserSelection = function(){
-		var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
-		userAnswers.push(userAnswer);
-		console.log(userAnswers);
-	}
-
-	};
-	  //if the quiz is over do this
+  var pushUserSelection = function(){
+    var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
+    userAnswers.push(userAnswer);
+    console.log(userAnswers);
+    
+  };
+    //if the quiz is over do this
   var quizOver = function(){
-   
       $('.quizBackground').hide();
       $('.quizResultsBackground').fadeIn(2500);
-      compareAnswers();
-      
   }; 
 
+  
 
-  //change question on click
-  	$('.next').on('click', function(){
-  	 if (userAnswers.length == 9) {//then this
-  	   quizOver();
+// compare userAnswers array with correct answers array
+  var compareAnswers = function(){
+    var accordionQuestionH2 = list[i].question;
+    var accordionExplanation = list[i].explanation;
+      for (i=0; i<=9; i++){
+        // console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
+        if (userAnswers[i] == list[i].correctAnswer){
+          console.log('yup');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
+      }else{
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
+      }
+    }
+  
+  }
+
+
+    //change question on click
+    $('.next').on('click', function(){
+     if (userAnswers.length == 9) {//then this
+       pushUserSelection();
+       quizOver();
+       compareAnswers();
     //if answer is checked do this
     } else {
       if ($('i').hasClass('fa-circle')){//this test should be first
@@ -90,60 +107,9 @@ $(document).ready(function(){
     }else{
         pickOneAlert();
       }
-
-  });
-
-   
- // compare userAnswers array with correct answers array
-  var compareAnswers = function(){
-      for (i=0; i<=10; i++){
-        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
-      if (userAnswers[i] === list[i].correctAnswer){
-        console.log('yup');
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
-      }else{
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
-
-      }
-    }
-  }
-  compareAnswers();
-
-  //if the quiz is over do this
-  var quizOver = function(){
-    if (userAnswers.length == 9){
-      $('.quizBackground').hide();
-      $('.quizResultsBackground').fadeIn(2500);
-      
-      }
-  } 
-
-  //accordion -- hides/shows answer explanation
-$('.accordionArticle').on('click', function(){
-  // $(this).find('.accordionHeader').slideToggle('slow');
-  $(this).find('.accordionAnswer').slideToggle('slow');
-
-});
-
-
   };
-});
-
-// compare userAnswers array with correct answers array
-  var compareAnswers = function(){
-      for (i=0; i<=9; i++){
-        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
-      if (userAnswers[i] === list[i].correctAnswer){
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
-      }else{
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation + '</p></article>');
-
-      }
-    }
-  }
-  
-
-   
+});    
+    
 
   //accordion -- hides/shows answer explanation
 $('.accordionArticle').on('click', function(){
@@ -152,19 +118,19 @@ $('.accordionArticle').on('click', function(){
 
 });
 
-
+ 
   });//document ready
    
    
    
- // button to go directly to results window
+ // hidden button to go directly to results window
     $('.results').on('click', function(){
       $('.welcomeWrapper').hide();
       $('.quizBackground').hide();
       $('.quizResultsBackground').show();
     });
 
- // button to go directly to pickOne window
+ // hidden button to go directly to pickOne window
     $('.pickOne').on('click', function(){
       $('.welcomeWrapper').hide();
       $('.quizBackground').fadeTo("slow", 0.1);
@@ -172,6 +138,7 @@ $('.accordionArticle').on('click', function(){
       $('.quizResultsBackground').hide();
       $('.pickOneBackground').show();
     });
+
 
 
 
