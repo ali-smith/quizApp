@@ -55,31 +55,41 @@ $(document).ready(function(){
   var pushUserSelection = function(){
     var userAnswer = $('.answersUL > .answersLI > .fa-circle + .userSelection').text();
     userAnswers.push(userAnswer);
-    console.log(userAnswers);
+    // console.log(userAnswers);
     
   };
+    
+   //shows first accordionArticle on page load
+  var showAccordionAnswerOne = function(){
+    $('.accordionDiv').find('.accordionHeaderInactive:first').removeClass('accordionHeaderInactive').addClass('accordionHeaderActive');
+    $('.accordionDiv').find('.accordionAnswer:first').show();
+    
+  }
+
     //if the quiz is over do this
   var quizOver = function(){
       $('.quizBackground').hide();
       $('.quizResultsBackground').fadeIn(2500);
-  }; 
+      $('.fadeBackground').fadeOut(2500);
+    }; 
 
-  
+
 
 // compare userAnswers array with correct answers array
   var compareAnswers = function(){
-    var accordionQuestionH2 = list[i].question;
-    var accordionExplanation = list[i].explanation;
       for (i=0; i<=9; i++){
-        console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
+        // console.log('list', list[i].correctAnswer, 'userAnswers: ',userAnswers[i]);
         if (userAnswers[i] == list[i].correctAnswer){
-          console.log('what?');
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa fa-star"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
+          // console.log('yes');
+          $('.fa-ul').prepend('<li><i class="fa-li fa fa-star fa-lg"></i></li>');
+         $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>' + list[i].question + '</h2><p class="accordionAnswer">' + list[i].explanation +'</p></article>'); 
+
       }else{
-        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeader"><i class="fa thumbs-down"></i>' + accordionQuestionH2 + '</h2><p class="accordionAnswer">' + accordionExplanation + '</p></article>');
+        // console.log('no');
+        $('.fa-ul').append('<li><i class="fa-li fa fa-star-o fa-lg"></i></li>');
+        $('.accordionDiv').append('<article class="accordionArticle"><h2 class="accordionHeaderInactive"><i class="fa fa-thumbs-down"></i>' + list[i].question +'</h2><p class="accordionAnswer">' + list[i].explanation +'</p></article>');
       }
     }
-  
   }
 
 
@@ -89,6 +99,7 @@ $(document).ready(function(){
        pushUserSelection();
        quizOver();
        compareAnswers();
+       showAccordionAnswerOne();
     //if answer is checked do this
     } else {
       if ($('i').hasClass('fa-circle')){
@@ -108,26 +119,41 @@ $(document).ready(function(){
         pickOneAlert();
       }
   };
-});    
+});   
+
+
+
+  //accordion -- hides/shows answer explanation    
+   $('.accordionDiv').on('click', '.accordionHeaderInactive',function(){
+      
+     //change NOT THIS headers to inactive and hide
+      $('.accordionDiv > .accordionArticle > h2').removeClass('accordionHeaderActive').addClass('accordionHeaderInactive');
+      $('.accordionDiv > .accordionArticle > .accordionHeaderInactive').slideDown('slow');
+      $('.accordionDiv > .accordionArticle > .accordionHeaderInactive').next('.accordionAnswer').slideUp('slow');
     
+    //change this header to active and show
+      // $(this).slideUp('slow');
+      $(this).next('.accordionAnswer').slideDown('slow');
+      $(this).removeClass('accordionHeaderInactive').addClass('accordionHeaderActive'); 
+});
 
-  //accordion -- hides/shows answer explanation
-$('.accordionArticle').on('click', function(){
-  // $(this).find('.accordionHeader').slideToggle('slow');
-  $(this).find('.accordionAnswer').slideToggle('slow');
-
+  //accordion -- darkens color on hover
+$('.accordionArticle').on('hover',function(){
+  $(this).fadeTo('fast', 1);
 });
 
  
-  });//document ready
+  
    
    
    
  // hidden button to go directly to results window
     $('.results').on('click', function(){
+      showAccordionAnswerOne();
       $('.welcomeWrapper').hide();
       $('.quizBackground').hide();
       $('.quizResultsBackground').show();
+      
     });
 
  // hidden button to go directly to pickOne window
@@ -136,10 +162,10 @@ $('.accordionArticle').on('click', function(){
       $('.quizBackground').fadeTo("slow", 0.1);
       $('.fadeBackground').show();
       $('.quizResultsBackground').hide();
-      $('.pickOneBackground').show();
+      $('.pickOneBackground').show();  
     });
 
 
 
-
+});//document ready
 

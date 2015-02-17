@@ -1,18 +1,18 @@
 .quizResultsBackground {
 	padding: 24px;
 	width: 600px;
-	height: 450px;
+	height: 500px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	margin-top: -225px;
+	margin-top: -275px;
 	margin-left: -300px;
-	background: rgba(38, 54, 87, 0.5);
+	background: rgba(28, 33, 53, 0.5);
 	border-radius: 10px;
 	/*shadow horiz vert blur spread color*/
-	-moz-box-shadow:    0px 0px 15px 0px #263657;
-  	-webkit-box-shadow: 0px 0px 15px 0px #263657;
-  	box-shadow:         0px 0px 15px 0px #263657;
+	-moz-box-shadow:    0px 0px 15px 0px #1c2135;
+  	-webkit-box-shadow: 0px 0px 15px 0px #1c2135;
+  	box-shadow:         0px 0px 15px 0px #1c2135;
 	display: none;
 }
 
@@ -21,57 +21,103 @@
 	font-weight: 600;
 	color: white;
 	text-align: center;
-	margin-bottom: 5px;
-	margin-top: -15px;
+	margin-top: -20px;
 }
 
 
-.tenStars {
+.fa-ul {
 	text-align: center;
-	font-size: 20px;
-	margin-bottom: 10px;
+	margin-top: -10px;
+	margin-bottom: 30px;
 }
 
-.tenStars .fa-star-o {
-	color: #edf993;
-	margin-right: 2px; 
+.fa-ul>li {
+	width: 19px;
+	display: inline-block;
 }
 
-.tenStars .fa-star {
-	color: #edf993;
-	margin-right: 2px; 
+.fa-ul .fa-star-o, .fa-ul .fa-star {
+	color: #faffba;
+	margin: 0;
+	padding: 0; 
 }
 
-.accordionArticle {
+
+ 
+.accordionArticle{
 	background: rgba(38, 54, 87, 0.5);
 	border-radius: 5px;
 	min-height: 30px;
-	max-height: 90px;
+	max-height: 150px;
 	margin-bottom: 5px;
 	display: block;	
 	cursor: pointer;
 }
 
-.accordionHeader {
-	/*font-size: 16px;*/
+.accordionArticle:hover {
+	background: rgba(38, 54, 87, 0.65);	
+}
+
+.accordionHeaderInactive, .accordionHeaderActive {
 	color: white;
-	/*height: 6px;
-	margin-bottom: 3px;*/
 }
 
-.accordionHeader .fa-star {
-	color: #edf993;
+
+.accordionHeaderInactive .fa-star, .accordionHeaderActive .fa-star{
+	color: #faffba;
 	margin: 8px 10px 0px 10px;
 }
 
-.accordionHeader .fa-thumbs-down {
-	color: #ff636c;
+.accordionHeaderInactive .fa-thumbs-down, .accordionHeaderActive .fa-thumbs-down {
+	color: #0df9ff;
 	margin: 8px 10px 0px 10px;
 }
 
-.accordionArticle p {
+.accordionAnswer  {
 	display: none;
+	font-size: 16px;
 	color: white;
-	padding: 10px 5px;
-	/*max-height: 48px;*/
+	line-height: 18px;
+	height: 140px;
+	padding: 5px 20px 5px 35px;
 }
+
+.accordionAnswer em {
+	color: white;
+	/*margin-bottom: 2px;*/
+	display: block;
+}
+
+
+.sourceCredit {
+	font-size: 12px;
+	color: #1c2135;
+	margin-bottom: -25px;
+	margin-left: 73px;
+	position: absolute;
+	bottom: 0;
+
+
+}
+
+.sourceCredit a:link {
+	text-decoration: none;
+	color:#1c2135
+}
+.sourceCredit a:visited {
+	text-decoration: none;
+	color:#1c2135
+}
+.sourceCredit a:hover {
+	text-decoration: none;
+	color:#1c2135
+	cursor:pointer;
+
+}
+.sourceCredit a:active {
+	text-decoration: none;
+	color:#1c2135 
+}
+
+
+

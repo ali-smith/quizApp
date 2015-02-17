@@ -9,6 +9,25 @@
 	<link rel="stylesheet" href="css/accordion.css"/>
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	
+	<!-- favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 <body>
 	<div class="fadeBackground"></div>
@@ -34,72 +53,107 @@
 	</section><!-- quizBackground -->
 	<div class="pickOneBackground"><p>You have not<br> made contact with<br>an answer.</p></div>
 	<section class="quizResultsBackground">
-		<h1>Nebulence score:</h1>
-		<div class="tenStars"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
+		<h1>Nebulence rating:</h1>
+		<ul class="fa-ul">
+		<!-- <li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li>
+		<li><i class="fa-li fa fa-star-o fa-lg"></i></li> -->
+		</ul>
 		 
-		<div id="accordionDiv">
+		<div class="accordionDiv">
+		<!-- this is where the answers append at quiz end -->
+
+<!-- <article class="accordionArticle">
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>"Nebula" is the Latin word for:</h2>
+		<p class="accordionAnswer">
 		
-		<!-- <article class="accordionArticle">
-		
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>"Nebula" is the Latin word for:</h2>
-		
-		<p class="accordionAnswer">We’re curious people. Look back over history, people have put their lives at stake to go out and explore. We believe in what we’re doing. Now it’s time to go.  Houston, Tranquillity Base here. The Eagle has landed.</p>
-		
+		<em>superclusters, clusters, galaxies, nebulae, star systems, stars, planets/moons</em><br>Astronomers make sense of the universe by organizing it into a series of "nested" levels. Nebulae occupy a level in the middle of this hierarchy, inside galaxies, filling the space between stars or enveloping stars like a cloak.
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-thumbs-down"></i>What is a nebula?</h2>
-		<p class="accordionAnswer">The world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>What is a nebula?</h2>
+		<p class="accordionAnswer"> 
+		
+		a collection of dust and gas particles gathered from the universe
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>Nebulae are formed by:</h2>
-		<p class="accordionAnswer">For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. </p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-thumbs-down"></i>Nebulae are formed by:</h2>
+		<p class="accordionAnswer">
+		
+		all of the above	
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>Some types of nebulae are: reflection, planetary, emission and:</h2>
-		<p class="accordionAnswer">For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>Some types of nebulae are: reflection, planetary, emission and:</h2>
+		<p class="accordionAnswer">
+			
+		absorption
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>What makes a reflection nebula glow?</h2>
-		<p class="accordionAnswer">Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>What makes a reflection nebula glow?</h2>
+		<p class="accordionAnswer">
+		
+		the light from nearby stars	
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>A nebula is a breeding ground for:</h2>
-		<p class="accordionAnswer">As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore . . . and this is exploration at its greatest.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>A nebula is a breeding ground for:</h2>
+		<p class="accordionAnswer">
+			
+		young stars
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>What kind of nebula is home to a red giant?</h2>
-		<p class="accordionAnswer">To go places and do things that have never been done before – that’s what living is all about. Now they say, we are reading about you in history class.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>What kind of nebula is home to a red giant?</h2>
+		<p class="accordionAnswer">
+		
+		planetary
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>Spectroscopy describes:</h2>
-		<p class="accordionAnswer">The regret on our side is, they used to say years ago, we are reading about you in science class. Now they say, we are reading about you in history class.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>Spectroscopy describes:</h2>
+		<p class="accordionAnswer">
+		the spectrum through which a nebula's light passes
+			
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>Spectroscopy describes:</h2>
-		<p class="accordionAnswer">The regret on our side is, they used to say years ago, we are reading about you in science class. Now they say, we are reading about you in history class.</p>
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>When a star forms in a nebula, it:</h2>
+		<p class="accordionAnswer">
+			
+		quickly pushes away the rest of the dust and gas with a powerful solar wind
+		</p>
 		</article>
 		
 		<article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i> + list[currentQuestion].question + </h2>
-		<p class="accordionAnswer"> + list[currentQuestion].explanation + </p>
-		</article> -->
+		<h2 class="accordionHeaderInactive"><i class="fa fa-star"></i>The first astronomer to document "nebulous" stars was:</h2>
+		<p class="accordionAnswer">
 		
-		<!-- <article class="accordionArticle">
-		<h2 class="accordionHeader"><i class="fa fa-star"></i>The first astronomer to document "nebulous" stars was:</h2>
-		<p class="accordionAnswer">To go places and do things that have never been done before – that’s what living is all about. Now they say, we are reading about you in history class.</p>
+		Ptolemy	
+		</p>
 		</article> --> 
-		
 		</div><!--/accordion-->
-	</section><!-- quizResults -->
+
 	
+		<section class ="sourceCredit"><a href="http://science.howstuffworks.com/dictionary/astronomy-terms/nebula.htm" target="_blank">sources: How Nebulae Work by William Harris</a> | <a href="http://hubblesite.org/gallery/behind_the_pictures/" target="_blank">Hubble Site: Behind the Pictures</a></section>
+	</section><!-- quizResults -->
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="js/questions.js"></script>
