@@ -3,7 +3,7 @@ var Question1 = {
 		question: '"Nebula" is the Latin word for:',
         answers: ['shiny','U.F.O.','cloud','what?'],
         correctAnswer: 'cloud',
-        explanation: '<em>"mist" or "cloud."</em><br>Interstellar matter — mainly dust and gas — is collected in such a way that it\'s visible to Earth-bound observers, either as a glowing cloud or as a dark silhouette against a lighter background. These clouds are nebulae.',
+        explanation: '<em>"mist" or "cloud"</em><br>Interstellar matter — mainly dust and gas — is collected in such a way that it\'s visible to Earth-bound observers, either as a glowing cloud or as a dark silhouette against a lighter background. These clouds are nebulae.',
 };
 var Question2 = { 
 		questionNumber: 9,
@@ -28,29 +28,29 @@ var Question4 = {
 };
 var Question5 = { 
 		questionNumber: 6,
-		question: 'How big are Nebulae?',
+		question: 'How big are nebulae?',
 		answers: ['about the size of China','20 light years','100 billion miles','one really super giant step'],
         correctAnswer: '20 light years',
-        explanation: '<em>galaxies: 100,000 light years > nebulae: 20 light years > star systems: 1.5 light years</em><br>The dust and gas of a nebula are spread very thinly -- it contains fewer atoms per cubic inch than a puff of smoke. Yet because of its size, it can dim or block out other objects positioned behind it.',
+        explanation: '<em>galaxies: 100,000 light years > nebulae: 20 light years > star systems: 1.5 light years</em><br>The dust and gas of a nebula are spread very thinly — it contains fewer atoms per cubic inch than a puff of smoke. Yet because of its size, it can dim or block out other objects positioned behind it.',
 };
 var Question6 = { 
 		questionNumber: 5,
 		question: 'Astronomers classify nebulae into these two broad categories:',
 		answers: ['light and dark','attractive and ugly','popular and unpopular','there and not-there'],
         correctAnswer: 'light and dark',
-        explanation: '<em>light and dark</em><br>Bright nebulae are close enough to nearby stars that they glow. Dark nebulae are not close enough to stars to be illuminated, so they\'re visible only when something brighter -- a star cluster, for example -- provides a backdrop.',
+        explanation: '<em>light and dark</em><br>Bright nebulae are close enough to nearby stars that they glow. Dark nebulae are not close enough to stars to be illuminated, so they\'re visible only when something brighter - a star cluster, for example - provides a backdrop.',
 };
 var Question7 = { 
 		questionNumber: 4,
 		question: 'Dark nebulae are breeding grounds for:',
 		answers: ['evil schemes','black holes','secrets','young stars'],
         correctAnswer: 'young stars',
-        explanation: '<em>young stars</em><br>When ball of dust and gas starts to contract under its own gravity, it shrinks and its core begins collapsing. This causes the core to heat up and to rotate, creating the condensed material of protostar.',
+        explanation: '<em>young stars</em><br>When a ball of dust and gas starts to contract under its own gravity, it shrinks and its core begins collapsing. This causes the core to heat up and to rotate, creating the condensed material of a protostar.',
 };
 var Question8 = { 
 		questionNumber: 3,
 		question: 'Some types of bright nebulae are associated with:',
-		answers: ['magic','astrological scandal','star death','Carl Sagan'],
+		answers: ['magic','unicorns','star death','Carl Sagan'],
 		correctAnswer: 'star death',
         explanation: '<em>star death</em><br>A nebula can be the remnant of a supernova, which occurs when a dying star explodes and throws off most of its material into space. These explosions form a visible nebula, some of which can be observed easily from Earth.',
 };
@@ -63,10 +63,10 @@ var Question9 = {
 };
 var Question10 = { 
 		questionNumber: 1,
-		question: ' Orion, the nearest stellar factory to our home planet:',
+		question: ' Orion, the nearest nebula to our home planet:',
 		answers: ['sits about 1,450 light-years from Earth', 'is a peeping tom','is getting closer every second','is constantly complaining about "Earth music"'],
         correctAnswer: 'sits about 1,450 light-years from Earth',
-        explanation: '<em>sits about 1,450 light-years from Earth</em><br>The discovery of planet-forming disks in the Orion Nebula has enormous implications. More than ever, astronomers believe that another star system like ours may hold a planet analogous to Earth -- one that has just the right conditions to support life as we know it.',
+        explanation: '<em>sits about 1,450 light-years from Earth</em><br>The discovery of planet-forming disks in the Orion Nebula has enormous implications. More than ever, astronomers believe that another star system like ours may hold a planet analogous to Earth - one that has just the right conditions to support life as we know it.',
 };	
 
 var list = [Question1,Question2,Question3,Question4,Question5,Question6,Question7,Question8,Question9,Question10];

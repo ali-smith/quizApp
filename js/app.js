@@ -129,11 +129,10 @@ $(document).ready(function(){
      //change NOT THIS headers to inactive and hide
       $('.accordionDiv > .accordionArticle > h2').removeClass('accordionHeaderActive').addClass('accordionHeaderInactive');
       $('.accordionDiv > .accordionArticle > .accordionHeaderInactive').slideDown('slow');
-      $('.accordionDiv > .accordionArticle > .accordionHeaderInactive').next('.accordionAnswer').slideUp('slow');
+      $('.accordionDiv > .accordionArticle > .accordionHeaderInactive').next('.accordionAnswer').slideUp(900);
     
     //change this header to active and show
-      // $(this).slideUp('slow');
-      $(this).next('.accordionAnswer').slideDown('slow');
+      $(this).next('.accordionAnswer').delay(90).slideDown(1200);
       $(this).removeClass('accordionHeaderInactive').addClass('accordionHeaderActive'); 
 });
 
