@@ -24,7 +24,6 @@
 	margin-top: -20px;
 }
 
-
 .fa-ul {
 	text-align: center;
 	margin-top: -10px;
@@ -42,8 +41,6 @@
 	padding: 0; 
 }
 
-
- 
 .accordionArticle{
 	background: rgba(38, 54, 87, 0.5);
 	border-radius: 5px;
@@ -62,7 +59,6 @@
 	color: white;
 	height: 30px;
 }
-
 
 .accordionHeaderInactive .fa-star, .accordionHeaderActive .fa-star{
 	color: #faffba;
@@ -88,6 +84,24 @@
 	display: block;
 }
 
+.againButton {
+	height: 55px;
+	width: 55px;
+	background-color: #faffba;
+	top: 5px;
+	border-radius: 50%;
+	position: absolute;
+	cursor: pointer;
+}
+
+.againButton:hover {
+	background-color: #f7ff8c;
+}
+
+.againButton p {
+	padding-top: 17px;
+	text-align: center;
+}
 
 .sourceCredit {
 	font-size: 12px;
@@ -96,24 +110,25 @@
 	margin-left: 73px;
 	position: absolute;
 	bottom: 0;
-
-
 }
 
 .sourceCredit a:link {
 	text-decoration: none;
 	color:#1c2135
 }
+
 .sourceCredit a:visited {
 	text-decoration: none;
 	color:#1c2135
 }
+
 .sourceCredit a:hover {
 	text-decoration: none;
 	color:#1c2135
 	cursor:pointer;
 
 }
+
 .sourceCredit a:active {
 	text-decoration: none;
 	color:#1c2135 
